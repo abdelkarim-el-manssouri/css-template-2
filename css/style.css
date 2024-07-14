@@ -1,3 +1,8 @@
+/* variables start */
+:root {
+  --main-color: #19c8fa;
+}
+/* variables end */
 /* global rules start */
 * {
   -webkit-box-sizing: border-box;
@@ -15,6 +20,7 @@ body {
   /* font-weight: 300;
   font-style: normal;
   font-variation-settings: 100; */
+  background-color: black;
 }
 ul {
   list-style: none;
@@ -42,3 +48,101 @@ ul {
   }
 }
 /* global rules end */
+/* header start */
+header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 97px;
+    img {
+      height: 40px;
+    }
+    nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .toggle-menu {
+        color: white;
+        font-size: 20px;
+        display: none;
+        cursor: pointer;
+      }
+      ul {
+        display: flex;
+        /* align-items: center; */
+        a {
+          display: block;
+          font-size: 14px;
+          color: white;
+          transition: 0.3s;
+          padding: 40px 10px;
+          text-decoration: none;
+          text-transform: capitalize;
+          position: relative;
+          z-index: 2;
+        }
+        a.active,
+        a:hover {
+          color: var(--main-color);
+          border-bottom: solid 1px var(--main-color);
+        }
+      }
+      .form {
+        margin-left: 20px;
+        width: 40px;
+        height: 30px;
+        border-left: solid 1px white;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        i {
+          color: white;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .container::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: calc(100% - 30px);
+    left: 15px;
+    bottom: 0;
+    background-color: #a2a2a2;
+  }
+}
+@media (max-width: 767px) {
+  header {
+    .container {
+      nav {
+        .toggle-menu {
+          display: block;
+        }
+        ul {
+          display: none;
+        }
+        .toggle-menu:hover + ul {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          a {
+            padding: 20px !important;
+          }
+        }
+      }
+    }
+  }
+}
+/* header end */
