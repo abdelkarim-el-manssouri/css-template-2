@@ -786,3 +786,127 @@ header {
   left: 0;
 }
 /* quote end */
+/* pricing start */
+.pricing {
+  padding-block: var(--section-padding);
+  .container {
+    .plan-cards {
+      display: grid;
+      gap: calc(20% / 4);
+      text-align: center;
+      .plan {
+        .head {
+          padding: 30px 0;
+          border-top: solid 2px var(--main-color);
+          p {
+            font-size: 17px;
+            font-weight: normal;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+          }
+          .price {
+            span:first-child {
+              position: relative;
+              top: -22px;
+              font-size: 20px;
+            }
+            span:nth-child(2) {
+              font-size: 50px;
+              font-weight: 500;
+            }
+            span:last-child {
+              text-transform: capitalize;
+            }
+          }
+        }
+        .body {
+          padding: 30px 0;
+          border-top: solid 2px var(--main-color);
+          p {
+            padding: 20px 10px;
+            width: fit-content;
+            margin: 0 auto;
+            text-transform: capitalize;
+          }
+          :not(p:last-child) {
+            border-bottom: solid 1px var(--main-color);
+          }
+        }
+        .foot {
+          padding: 30px 0;
+          border-top: solid 2px var(--main-color);
+          button {
+            padding: 10px 20px;
+            background-color: white;
+            border: solid 1px var(--main-color);
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+    .contact-section {
+      text-align: center;
+      text-transform: capitalize;
+      padding: 60px 20px;
+      margin-top: 40px;
+      p {
+        font-size: 25px;
+        margin-bottom: 60px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        background-color: var(--main-color);
+        padding: 15px 25px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .pricing {
+    .container {
+      .plan-cards {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        .plan {
+          padding: 30px;
+          border: solid 1px var(--main-color);
+          border-radius: 5px;
+          box-shadow: 0px 15px 0px 5px #dedadc;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .pricing {
+    .container {
+      .plan-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        .plan {
+          padding: 30px;
+          border: solid 1px var(--main-color);
+          border-radius: 5px;
+          box-shadow: 0px 15px 0px 5px #dedadc;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .pricing {
+    .container {
+      .plan-cards {
+        grid-template-columns: repeat(4, minmax(20%, 1fr));
+        gap: 50px;
+        .plan {
+          padding: 0;
+          border: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+/* pricing end */
